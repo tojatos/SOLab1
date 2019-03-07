@@ -6,14 +6,23 @@ namespace SOLab1
 {
     internal static class Program
     {
-        public static void Main(string[] args)
+        public const int ClockTreshold = 1000000;
+        public static void Main()
         {
-            var processes = GenerateTestingProcesses();
-            double fcfsAvgTime = new Fcfs().Simulate(processes);
-            Console.WriteLine($"FCFS average time: {fcfsAvgTime}");
-            //double sjfAvgTime = new Sjf().Simulate(processes);
-            //Console.WriteLine($"SJF average time: {sjfAvgTime}");
-            Console.ReadKey();
+            try
+            {
+                List<Process> processes = GenerateTestingProcesses();
+                double fcfsAvgTime = new Fcfs().Simulate(processes);
+                Console.WriteLine($"FCFS average time: {fcfsAvgTime}");
+                processes.ForEach(p => p.Reset());
+                //double sjfAvgTime = new Sjf().Simulate(processes);
+                //Console.WriteLine($"SJF average time: {sjfAvgTime}");
+    //            Console.ReadKey();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
 
         private static List<Process> GenerateTestingProcesses()

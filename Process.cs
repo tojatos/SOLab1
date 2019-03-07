@@ -17,6 +17,11 @@ namespace SOLab1
 
         public void Execute(int time) => ExecTime += time;
 
-        public override string ToString() => $"PID: {Pid}\tEstimated exec time: {EstimatedExecutionTime}";
+        public void Reset()
+        {
+            ExecTime = 0;
+        }
+
+        public override string ToString() => $"PID: {Pid}\tEstimated exec time: {EstimatedExecutionTime}\tIsDone: {IsDone}";
     }
 }

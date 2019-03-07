@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_SOLab1.-85803074.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.1/system/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_SOLab1.581483794.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="FCFS.cs" t="Include" />
       <e p="IPlanningAlgorithm.cs" t="Include" />
@@ -15,6 +14,7 @@
       <e p="SJF.cs" t="Include" />
       <e p="SOLab1.csproj" t="IncludeRecursive" />
       <e p="SOLab1.sln" t="IncludeFlat" />
+      <e p="app.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
