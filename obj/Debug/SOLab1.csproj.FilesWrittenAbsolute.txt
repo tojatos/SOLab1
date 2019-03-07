@@ -1,0 +1,5 @@
+/home/tojatos/RiderProjects/SOLab1/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttribute.cs
+/home/tojatos/RiderProjects/SOLab1/bin/Debug/SOLab1.pdb
+/home/tojatos/RiderProjects/SOLab1/bin/Debug/SOLab1.exe
+/home/tojatos/RiderProjects/SOLab1/obj/Debug/SOLab1.exe
+/home/tojatos/RiderProjects/SOLab1/obj/Debug/SOLab1.pdb

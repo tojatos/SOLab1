@@ -1,0 +1,7 @@
+F:\SOLab1\bin\Debug\SOLab1.exe.config
+F:\SOLab1\bin\Debug\SOLab1.exe
+F:\SOLab1\bin\Debug\SOLab1.pdb
+F:\SOLab1\obj\Debug\SOLab1.csprojAssemblyReference.cache
+F:\SOLab1\obj\Debug\SOLab1.csproj.CoreCompileInputs.cache
+F:\SOLab1\obj\Debug\SOLab1.exe
+F:\SOLab1\obj\Debug\SOLab1.pdb
