@@ -6,31 +6,25 @@ namespace SOLab1
 {
     public class Fcfs : IPlanningAlgorithm
     {
-        public double Simulate(List<Process> processes)
+        public void Simulate(List<Process> processes)
         {
             var processesToTake = new List<Process>(processes);
             var processesQueue = new Queue<Process>();
-            int totalAwaitingTime = 0;
-            var awaitTimes = new List<int>();
-            for (int clock = 0; processes.Any(p => !p.IsDone) && clock < Program.ClockTreshold; ++clock)
+            for (int clock = 0; processes.Any(p => !p.IsCompleted) && clock < Program.ClockTreshold; ++clock)
             {
-                processesToTake.FindAll(p => p.StartTime == clock).ForEach(p =>
+                processesToTake.FindAll(p => p.ArrivalTime == clock).ForEach(p =>
                 {
                     processesToTake.Remove(p);
                     processesQueue.Enqueue(p);
                 });
-                while (processesQueue.Any())
-                {
-                    Process process = processesQueue.Dequeue();
-                    awaitTimes.Add(totalAwaitingTime);
-
-                    int execTime = process.EstimatedExecutionTime;
-                    totalAwaitingTime += execTime;
-                    process.Execute(execTime);
-                }
+                if (!processesQueue.Any()) continue;
+                Process process = processesQueue.Peek();
+                process.Execute();
+                if (process.BurstTime != process.ExecTime) continue;
+                process.Complete(clock + 1);
+                processesQueue.Dequeue();
             }
-            if(processes.Any(p => !p.IsDone)) throw new Exception("FCFS simulation failed");
-            return (double)awaitTimes.Sum() / processes.Count;
+            if(processes.Any(p => !p.IsCompleted)) throw new Exception("FCFS simulation failed");
 
         }
     }

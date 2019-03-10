@@ -7,6 +7,6 @@ namespace SOLab1
         /// <summary>
         /// Returns average execution time
         /// </summary>
-        double Simulate(List<Process> processes);
+        void Simulate(List<Process> processes);
     }
 }
