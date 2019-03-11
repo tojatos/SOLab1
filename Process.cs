@@ -1,3 +1,4 @@
+using System;
 namespace SOLab1
 {
     public class Process
@@ -21,8 +22,7 @@ namespace SOLab1
             ArrivalTime = arrivalTime;
         }
 
-//        public void Execute(int time) => ExecTime += time;
-        public void Execute() => ++ExecTime;
+		public void Execute() => ++ExecTime;
         public void Complete(int time) => CompletionTime = time;
 
         public void Reset()
@@ -30,7 +30,5 @@ namespace SOLab1
             ExecTime = 0;
             CompletionTime = 0;
         }
-
-//        public override string ToString() => $"PID: {Pid}\tEstimated exec time: {EstimatedExecutionTime}\tIsDone: {IsDone}";
     }
 }

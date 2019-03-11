@@ -8,7 +8,7 @@ namespace SOLab1
     {
         public const int ClockTreshold = 1000000;
         private const int RoundRobinTimeSlice = 3;
-        private const int TestSeries = 50;
+        private const int TestSeries = 5000;
         private static readonly Random Random = new Random();
         public static void Main()
         {
@@ -24,22 +24,26 @@ namespace SOLab1
                 var roundRobin = new RoundRobin(RoundRobinTimeSlice);
                 for (int i = 0; i < TestSeries; ++i)
                 {
-                    List<Process> processes = GenerateAniaProcesses();
+                    List<Process> processes = GenerateTestingProcesses();
                     
                     fcfs.Simulate(processes);
-                    fcfsTimes.Add(GetAverageTurnAroundTime(processes));
+					//Print(processes);
+                    fcfsTimes.Add(GetAverageWaitingTime(processes));
                     Reset(processes);
                     
                     sjfNonPreemptive.Simulate(processes);
-                    sjfNonPreemptiveTimes.Add(GetAverageTurnAroundTime(processes));
+					//Print(processes);
+                    sjfNonPreemptiveTimes.Add(GetAverageWaitingTime(processes));
                     Reset(processes);
                     
                     sjfPreemptive.Simulate(processes);
-                    sjfPreemptiveTimes.Add(GetAverageTurnAroundTime(processes));
+					//Print(processes);
+                    sjfPreemptiveTimes.Add(GetAverageWaitingTime(processes));
                     Reset(processes);
                     
                     roundRobin.Simulate(processes);
-                    roundRobinTimes.Add(GetAverageTurnAroundTime(processes));
+					//Print(processes);
+                    roundRobinTimes.Add(GetAverageWaitingTime(processes));
                     Reset(processes);
                 }
                 
@@ -56,6 +60,8 @@ namespace SOLab1
 
         private static double GetAverageTurnAroundTime(List<Process> processes)
             => (double) processes.Select(p => p.TurnAroundTime).Sum() / processes.Count;
+        private static double GetAverageWaitingTime(List<Process> processes)
+            => (double) processes.Select(p => p.WaitingTime).Sum() / processes.Count;
 
         private static List<Process> GenerateTestingProcesses()
         {

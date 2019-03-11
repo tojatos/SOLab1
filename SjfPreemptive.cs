@@ -18,7 +18,8 @@ namespace SOLab1
                     processesQueue.Enqueue(p);
                 });
                 if (!processesQueue.Any()) continue;
-                processesQueue = new Queue<Process>(processesQueue.OrderBy(p => p.RemaingExecutionTime));
+				if(processesQueue.Any(p => p.RemaingExecutionTime < processesQueue.Peek().RemaingExecutionTime))
+				  processesQueue = new Queue<Process>(processesQueue.OrderBy(p => p.RemaingExecutionTime));
                 Process process = processesQueue.Peek();
                 process.Execute();
                 if (process.BurstTime != process.ExecTime) continue;

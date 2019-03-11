@@ -18,12 +18,12 @@ namespace SOLab1
                     processesQueue.Enqueue(p);
                 });
                 if (!processesQueue.Any()) continue;
-                processesQueue = new Queue<Process>(processesQueue.OrderBy(p => p.BurstTime));
                 Process process = processesQueue.Peek();
                 process.Execute();
                 if (process.BurstTime != process.ExecTime) continue;
                 process.Complete(clock + 1);
                 processesQueue.Dequeue();
+                processesQueue = new Queue<Process>(processesQueue.OrderBy(p => p.BurstTime));
             }
             if(processes.Any(p => !p.IsCompleted)) throw new Exception("SJF non-preemtive simulation failed");
 
