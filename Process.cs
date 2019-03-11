@@ -11,6 +11,7 @@ namespace SOLab1
         
         public int TurnAroundTime => CompletionTime - ArrivalTime;
         public int WaitingTime => TurnAroundTime - BurstTime;
+        public int RemaingExecutionTime => BurstTime - ExecTime;
         public bool IsCompleted => CompletionTime != 0;
 
         public Process(int pid, int burstTime, int arrivalTime)
