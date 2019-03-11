@@ -24,15 +24,16 @@ namespace SOLab1
                 });
                 if (!processesQueue.Any()) continue;
                 Process process = processesQueue.Peek();
-                if (process.ExecTime % _timeSlice == 0)
-                {
-                    processesQueue = new Queue<Process>(processesQueue.OrderBy(p => p.ExecTime));
-                    process = processesQueue.Peek();
-                }
                 process.Execute();
-                if (process.BurstTime != process.ExecTime) continue;
-                process.Complete(clock + 1);
-                processesQueue.Dequeue();
+                if (process.BurstTime == process.ExecTime)
+                {
+                    process.Complete(clock + 1);
+                    processesQueue.Dequeue();
+                } 
+                else if(process.ExecTime % 3 == 0)
+                {
+                    processesQueue.Enqueue(processesQueue.Dequeue());
+                }
             }
             if(processes.Any(p => !p.IsCompleted)) throw new Exception("Round Robin simulation failed");
 
