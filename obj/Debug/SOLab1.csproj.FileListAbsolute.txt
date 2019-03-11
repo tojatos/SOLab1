@@ -12,3 +12,9 @@ F:/SOLab1/obj/Debug/SOLab1.pdb
 /home/tojatos/Scripts/SOLab1/obj/Debug/SOLab1.csproj.CoreCompileInputs.cache
 /home/tojatos/Scripts/SOLab1/obj/Debug/SOLab1.exe
 /home/tojatos/Scripts/SOLab1/obj/Debug/SOLab1.pdb
+/home/tojatos/RiderProjects/SOLab1/bin/Debug/SOLab1.exe.config
+/home/tojatos/RiderProjects/SOLab1/bin/Debug/SOLab1.exe
+/home/tojatos/RiderProjects/SOLab1/bin/Debug/SOLab1.exe.mdb
+/home/tojatos/RiderProjects/SOLab1/obj/Debug/SOLab1.csprojResolveAssemblyReference.cache
+/home/tojatos/RiderProjects/SOLab1/obj/Debug/SOLab1.exe
+/home/tojatos/RiderProjects/SOLab1/obj/Debug/SOLab1.exe.mdb

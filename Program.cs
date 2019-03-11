@@ -24,7 +24,7 @@ namespace SOLab1
                 var roundRobin = new RoundRobin(RoundRobinTimeSlice);
                 for (int i = 0; i < TestSeries; ++i)
                 {
-                    List<Process> processes = GenerateTestingProcesses();
+                    List<Process> processes = GenerateAniaProcesses();
                     
                     fcfs.Simulate(processes);
                     fcfsTimes.Add(GetAverageTurnAroundTime(processes));
@@ -61,6 +61,12 @@ namespace SOLab1
         {
             int[] executionTimes = {20, 11, 23, 2, 4, 4, 20, 200, 129, 3, 4, 23, 55, 8, 99};
             return executionTimes.Select(t => new Process(PidGenerator.GetNext(), t, Random.Next(1, 1001))).ToList();
+        }
+        private static List<Process> GenerateAniaProcesses()
+        {
+            int[] executionTimes = {8, 5, 1, 2, 4};
+			int[] startTimes = {0, 2, 4, 5, 7};
+            return executionTimes.Select((t, i) => new Process(PidGenerator.GetNext(), t, startTimes[i])).ToList();
         }
 
         private static void Reset(List<Process> processes) => processes.ForEach(p => p.Reset());

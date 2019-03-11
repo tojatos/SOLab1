@@ -30,7 +30,7 @@ namespace SOLab1
                     process.Complete(clock + 1);
                     processesQueue.Dequeue();
                 } 
-                else if(process.ExecTime % 3 == 0)
+                else if(process.ExecTime % _timeSlice == 0)
                 {
                     processesQueue.Enqueue(processesQueue.Dequeue());
                 }
